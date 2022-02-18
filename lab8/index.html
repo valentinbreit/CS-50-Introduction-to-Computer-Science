@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            function Check()
+            {
+                CheckMultipleQuestion();
+                FreeQuestion();
+            }
+            
+            function CheckMultipleQuestion()
+            {
+                // Need the acces to that exact value
+                let Correct = document.querySelector(".correct");
+                
+                // Need that only acces to this through the click
+                Correct.addEventListener("click", function(){
+                    Correct.style.backgroundColor = "green";
+                    document.querySelector("#FeedBackPart1").innerHTML = "Correct!";
+                });
+                // Need the acces to ALL values that class where "incorrect"
+                let Incorrects = document.querySelectorAll(".incorrect");
+                for (let i = 0; i < Incorrects.length; i++)
+                {
+                    Incorrects[i].addEventListener("click", function(){
+                        Incorrects[i].style.backgroundColor = "red";
+                        document.querySelector("#FeedBackPart1").innerHTML = "Incorrect!";
+                    });
+                }    
+            }
+            
+            function FreeQuestion()
+            {
+                // Need to acces to the button, then to the information in that button when its submited
+                document.querySelector("#Check").addEventListener("click", function(){
+                    // Need to have loaded in a variable the answer
+                    let Answer = document.querySelector("input");
+                    // Need to check if its correct
+                    if (Answer.value === "Doran´s Blade")
+                    {
+                        Answer.style.backgroundColor = "green";
+                        document.querySelector("#FeedBackPart2").innerHTML = "Correct!";
+                    }
+                    else
+                    {
+                        Answer.style.backgroundColor = "red";
+                        document.querySelector("#FeedBackPart2").innerHTML = "Inorrect!";
+                    }
+                })
+            }
+
+            // Wait to all the content are loaded
+            document.addEventListener("DOMContentLoaded", Check);
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <h3> What type of ADC is Ezreal? </h3>
+                
+                <!-- All buttons -->
+                <button class="incorrect"> Hyper Carry </button>
+                <button class="incorrect"> Early Carry </button>
+                <button class="incorrect"> Burst Carry </button>
+                <button class="incorrect"> DPS Carry </button>
+                <button class="correct"> Poke Carry </button>
+                
+                <!-- Here you can add text later leting the user know if they choose the rigth option or not-->
+                <p id = "FeedBackPart1"> </p>
+                
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <h3> With what starter item begins Ezreal? </h3>
+                
+                <!-- I want to create a box wich you need to use to response -->    
+                <input type="text"> </input>
+                <button id="Check">Check Answer</button>
+
+                <!-- Here you can add text later leting the user know if they choose the rigth option or not-->
+                <p id="FeedBackPart2"> </p>
+                
+            </div>
+
+        </div>
+    </body>
+</html>

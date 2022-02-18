@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort.
+
+How do you know?: Beacuse its the slowest of the 3 sorts, and in the Lecture in the part of visualization, you can see in the final demostration that Bubble Sort was the last one in finish sorting.
+
+sort2 uses: Merge Sort.
+
+How do you know?: Beacuse its the fastest of the 3 sorts,  and in the Lecture in the part of visualization, you can see in the final demostration that Merge Sort was the first in finish sorting.
+
+sort3 uses: Selection sort.
+
+How do you know?: Beacuse its in the medium between Sort1 and Sort2, and in the Lecture in the part of visualization, you can see in the final demostration that Selection Sort was the second in finish sorting. 

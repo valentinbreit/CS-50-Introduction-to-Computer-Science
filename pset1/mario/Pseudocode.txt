@@ -1,0 +1,11 @@
+make user enter value between 1 and 8
+
+do program analice the value
+
+if variable false 
+    again enter value
+
+if variable true
+    for  1 to value make
+        #
+        line
