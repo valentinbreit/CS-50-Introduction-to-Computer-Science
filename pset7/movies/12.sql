@@ -1,0 +1,1 @@
+SELECT movies.title FROM people JOIN stars JOIN movies ON people.id = stars.person_id AND stars.movie_id = movies.id WHERE (people.name = "Johnny Depp" AND movies.title IN (SELECT movies.title FROM people JOIN stars JOIN movies ON people.id = stars.person_id AND stars.movie_id = movies.id WHERE (people.name = "Helena Bonham Carter"))) ORDER BY movies.title;
